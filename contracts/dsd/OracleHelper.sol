@@ -21,7 +21,7 @@ contract OracleHelper {
         uint256 _index,
         uint32 _timestamp,
         uint256 _cumulative
-    ) public returns (Decimal.D256 memory) {
+    ) public returns (uint256 value) {
         IUniswapV2Pair _pair = IUniswapV2Pair(
             IUniswapV2Factory(UNISWAP_FACTORY).createPair(dollar, USDC)
         );
@@ -42,6 +42,6 @@ contract OracleHelper {
         _timestamp = blockTimestamp;
         _cumulative = priceCumulative;
 
-        return price.mul(1e12);
+        return price.mul(1e12).value;
     }
 }
