@@ -18,13 +18,12 @@ contract DSDOracleHelper {
 
     function getPrice(
         address dollar,
+        address pairAddress,
         uint256 _index,
         uint32 _timestamp,
         uint256 _cumulative
-    ) public returns (uint256 value) {
-        IUniswapV2Pair _pair = IUniswapV2Pair(
-            IUniswapV2Factory(UNISWAP_FACTORY).createPair(dollar, USDC)
-        );
+    ) public view returns (uint256 value) {
+        IUniswapV2Pair _pair = IUniswapV2Pair(pairAddress);
         (
             uint256 price0Cumulative,
             uint256 price1Cumulative,
