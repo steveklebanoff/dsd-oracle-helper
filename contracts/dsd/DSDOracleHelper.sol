@@ -6,7 +6,7 @@ import "@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol";
 import "@uniswap/v2-core/contracts/interfaces/IUniswapV2Factory.sol";
 import "./external/Decimal.sol";
 
-contract OracleHelper {
+contract DSDOracleHelper {
     address private constant UNISWAP_FACTORY = address(
         0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f
     );
