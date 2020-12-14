@@ -17,7 +17,6 @@ contract DSDOracleHelper {
     using Decimal for Decimal.D256;
 
     function getPrice(
-        address dollar,
         address pairAddress,
         uint256 _index,
         uint32 _timestamp,
