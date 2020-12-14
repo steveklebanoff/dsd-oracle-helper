@@ -1,3 +1,39 @@
-# solidity template
+# dsd-oracle-helper
 
-minimal template for developing smart contracts w/ openzeppelin + typescript + mocha
+solidity helper for getting dsd price
+
+**1) get private vars using getStorageAt**
+
+```
+import { AbiCoder } from "ethers/lib/utils";
+
+const timestampEncoded = await ethersProvider.getStorageAt(
+  oracle.address,
+  "0x5"
+);
+
+const timestampEncoded = await ethersProvider.getStorageAt(
+  oracle.address,
+  "0x5"
+);
+const timestamp = parseFloat(
+  coder.decode(["uint256"], timestampEncoded).toString()
+);
+const cumultativeEncoded = await ethersProvider.getStorageAt(
+  oracle.address,
+  "0x4"
+);
+const cumulative = parseFloat(
+  coder.decode(["uint256"], cumultativeEncoded).toString()
+);
+
+```
+
+**2) send values into get getPrice**
+
+getPrice(
+0x66e33d2605c5fb25ebb7cd7528e7997b0afa55e8,
+1,
+timestamp,
+cumulative
+)
